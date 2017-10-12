@@ -9,3 +9,5 @@ applications:
   services:
     - oms-eureka
     - oms-rabbit
+    - oms-circuitbreaker
+    - oms-configserver
