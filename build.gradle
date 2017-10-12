@@ -4,6 +4,7 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		mavenLocal()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -25,6 +26,7 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 
@@ -37,8 +39,15 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('io.pivotal.spring.cloud:spring-cloud-services-starter-config-client')
 	compile('io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry')
+	compile('org.springframework.cloud:spring-cloud-starter-hystrix')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-amqp')
+	compile('com.fasterxml.jackson.core:jackson-annotations')
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	compile('com.oms.common.web:oms-common-web:0.0.1-SNAPSHOT')
+	compile('com.oms.common.security:oms-common-security:0.0.1-SNAPSHOT')
 }
 
 dependencyManagement {
